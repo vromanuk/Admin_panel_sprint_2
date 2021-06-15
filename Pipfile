@@ -9,9 +9,11 @@ django = "*"
 django-model-utils = "*"
 factory-boy = "*"
 django-environ = "*"
+django-extensions = "*"
 
 [dev-packages]
 django-debug-toolbar = "*"
+django-extensions = "*"
 
 [requires]
 python_version = "3.9"
