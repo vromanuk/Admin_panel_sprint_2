@@ -10,6 +10,7 @@ class Person(TimeStampedModel):
     first_name = models.CharField(max_length=45)
     last_name = models.CharField(max_length=45)
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    birth_date = models.DateField(null=True)
 
     class Meta:
         verbose_name = _("актеры, режиссеры и сценаристы")
