@@ -15,12 +15,21 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
+      - static_volume:/app/movies_admin/images/
     ports:
       - "8000:8000"
     depends_on:
       - db
     env_file:
       - ./.env
-
+  nginx:
+    build: ./nginx
+    ports:
+      - "1337:80"
+    depends_on:
+      - web
+    volumes:
+      - static_volume:/app/movies_admin/images/
 volumes:
   pg_data:
+  static_volume:
