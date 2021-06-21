@@ -10,6 +10,7 @@ django-model-utils = "*"
 factory-boy = "*"
 django-environ = "*"
 django-extensions = "*"
+gunicorn = "*"
 
 [dev-packages]
 django-debug-toolbar = "*"

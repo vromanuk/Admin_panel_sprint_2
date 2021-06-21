@@ -1,17 +1,14 @@
-FROM python:3
+FROM python:3.9.5-slim
 ENV PYTHONUNBUFFERED=1
 
 RUN useradd -ms /bin/bash tarantino
 WORKDIR /app
 
-RUN pip install pipenv
-COPY Pipfile /app/
-COPY Pipfile.lock /app/
-RUN PIPENV_VENV_IN_PROJECT=1 pipenv install --deploy --system --dev
+COPY ["Pipfile", "Pipfile.lock", "movies_admin", "/app/"]
+EXPOSE 8000
 
-COPY movies_admin /app/
+ENV PIPENV_VENV_IN_PROJECT=1
+RUN pip install pipenv && pipenv install --deploy --system --dev
 
 RUN chown -R tarantino:tarantino /app/
 USER tarantino
-
-EXPOSE 8000
