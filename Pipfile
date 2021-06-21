@@ -11,6 +11,7 @@ factory-boy = "*"
 django-environ = "*"
 django-extensions = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 django-debug-toolbar = "*"

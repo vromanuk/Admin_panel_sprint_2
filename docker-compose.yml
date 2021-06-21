@@ -14,8 +14,7 @@ services:
     build: .
     command: gunicorn --bind=0.0.0.0:8000 config.wsgi:application
     volumes:
-      - .:/code
-      - static_volume:/app/movies_admin/images/
+      - static_volume:/app/config/staticfiles/
     ports:
       - "8000:8000"
     depends_on:
@@ -29,7 +28,7 @@ services:
     depends_on:
       - web
     volumes:
-      - static_volume:/app/movies_admin/images/
+      - static_volume:/app/config/staticfiles/
 volumes:
   pg_data:
   static_volume:
