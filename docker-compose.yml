@@ -6,7 +6,7 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
     env_file:
-      - ./.env
+      - ./.env_prod
     restart: always
     ports:
       - "5432:5432"
@@ -20,7 +20,7 @@ services:
     depends_on:
       - db
     env_file:
-      - ./.env
+      - ./.env_prod
   nginx:
     build: ./nginx
     ports:
