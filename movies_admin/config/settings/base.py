@@ -153,7 +153,7 @@ INTERNAL_IPS = [
 LOGGING_CONFIG = None
 
 # Get loglevel from env
-LOGLEVEL = env.str("DJANGO_LOGLEVEL", "info").upper()
+LOGLEVEL = env.str("DJANGO_LOGLEVEL", default="info").upper()
 
 logging.config.dictConfig(
     {
