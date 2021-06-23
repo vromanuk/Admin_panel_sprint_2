@@ -54,7 +54,7 @@ class Movies(MoviesApiMixin, BaseListView):
         else:
             context = {"count": None, "total_pages": None, "prev": None, "next": None}
 
-        context["results"] = list(queryset)
+        context["result"] = list(queryset)
         return context
 
 
@@ -64,5 +64,4 @@ class MoviesDetailApi(MoviesApiMixin, BaseDetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         film_work = self.get_object()
-        context = {"results": film_work}
-        return context
+        return film_work
