@@ -12,5 +12,6 @@
     - POSTGRES_DB=your_postgres_db_name
     - DB_PORT=5432
     - DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+    - DB_HOST=localhost
 - Run `docker-compose up -d --build` from `the folder root`.
-- Visit [localhost:8000](localhost:8000)
+- Visit [localhost:8000](localhost:8000) for `Django Server` or [localhost](localhost:80) for `Nginx`
