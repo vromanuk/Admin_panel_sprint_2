@@ -10,5 +10,8 @@ EXPOSE 8000
 ENV PIPENV_VENV_IN_PROJECT=1
 RUN pip install pipenv && pipenv install --deploy --system --dev
 
-COPY --chown=tarantino:tarantino ["movies_admin/", "/app/"]
+COPY --chown=tarantino:tarantino ["movies_admin/", "scripts/", "/app/"]
+RUN chmod +x run-app.sh
+
 USER tarantino
+CMD ["./run-app.sh"]

@@ -12,7 +12,6 @@ services:
       - "5432:5432"
   web:
     build: .
-    command: gunicorn --bind=0.0.0.0:8000 config.wsgi:application
     volumes:
       - static_volume:/static_files
     ports:
